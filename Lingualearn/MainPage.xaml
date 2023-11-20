@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lingualearn.MainPage">
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand">
+
+        <Label Text="LinguaLearn" HorizontalOptions="Center" FontFamily="Kanit-ExtraBoldItalic" FontSize="Header" FontAttributes="Bold"/>
+
+        <Label Text="Login" HorizontalOptions="Center" FontSize="28" FontAttributes="Bold"/>
+
+        <Entry x:Name="UsernameEntry" Placeholder="Username" FontSize="16"/>
+        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" FontSize="16"/>
+
+        <Frame CornerRadius="10" BackgroundColor="#3498db" Padding="0">
+            <Button Text="Login" HorizontalOptions="Center" WidthRequest="200" HeightRequest="50"
+                    TextColor="White" Clicked="LoginButton_Click"/>
+        </Frame>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+            <Label Text="Don't have an account?" FontSize="14"/>
+            <Label Text="Sign up here" TextColor="#3498db" FontSize="16" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignUp_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
