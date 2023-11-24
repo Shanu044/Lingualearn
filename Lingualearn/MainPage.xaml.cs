@@ -2,37 +2,23 @@
 {
     public partial class MainPage : ContentPage
     {
-       
+        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void OnCounterClicked(object sender, EventArgs e)
         {
-            string username = UsernameEntry.Text;
-            string password = PasswordEntry.Text;
+            count++;
 
-            // Implement your login logic here
-            // For example, you could check the username and password against a database
-
-            if (username == "your_username" && password == "your_password")
-            {
-                DisplayAlert("Success", "Login successful!", "OK");
-                // Add code to navigate to the main application or perform other actions
-            }
+            if (count == 1)
+                CounterBtn.Text = $"Clicked {count} time";
             else
-            {
-                DisplayAlert("Error", "Login failed. Please check your credentials.", "OK");
-            }
-        }
+                CounterBtn.Text = $"Clicked {count} times";
 
-        private void SignUp_Tapped(object sender, EventArgs e)
-        {
-            // Implement navigation to the sign-up page here
-            // For example:
-            // Navigation.PushAsync(new SignUpPage());
+            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 }
